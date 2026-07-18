@@ -1,8 +1,11 @@
-t -- SYSTEM UBUNTU-24.04 -- 
+ -- SYSTEM UBUNTU-24.04 -- 
 
 architecture amd64
 gpu can be anything because we use the open-source one to allow the access 
 also we install allow of the package for linux-firmware to connect to the hardware of different firmware
+
+# turn on the conservation_mode (1 for on 0 for off)
+echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 
 ---------------------------------------------------------
 # keybinding 
@@ -120,6 +123,7 @@ sudo libinput debug-events --show-keycodes
 ----------------------------------------------------------------------------------
 
 # apt
+man-db manpages-dev manpages-posix-dev (for C developer - those package work with lazyvim so we can use shift k to open man inside of the text editor to view the function or the command) 
 xarchiver (extractor for compressed file)
 fzf
 alsa-utils (for arecord)
@@ -513,19 +517,11 @@ should_launch_new_window 1
 # Instal the requirements
 
 ```bash
-sudo apt update
-sudo apt install stow mesa-utils libgl1-mesa-dri libegl-mesa0 libgbm1 xwayland alsa-utils  xserver-xorg-video-nouveau pipewire wireplumber brightnessctl libinput-tools alsa-utils acpi-call-dkms tp-smapi-dkms linux-modules-extra-$(uname -r) rfkill nmap  swayidle swaylock wl-clipboard gcc xwayland dbus-user-session sway swayimg tree wofi zoxide slurp grim gimp thunar bluez blueman pavucontrol wev curl tar wget unzip fontconfig btop waybar xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk fzf mpv xarchiver -y
+sudo apt update && sudo apt full-upgrade
+sudo apt install stow mesa-utils libgl1-mesa-dri libegl-mesa0 libgbm1 xwayland alsa-utils  xserver-xorg-video-nouveau pipewire wireplumber brightnessctl libinput-tools alsa-utils acpi-call-dkms tp-smapi-dkms linux-modules-extra-$(uname -r) rfkill nmap  swayidle swaylock wl-clipboard gcc xwayland dbus-user-session sway swayimg tree wofi zoxide slurp grim gimp thunar bluez blueman pavucontrol wev curl tar wget unzip fontconfig btop waybar xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk fzf mpv xarchiver man-db manpages-dev manpages-posix-dev -y
 ```
 
 how to use gnu stow
 https://www.youtube.com/watch?v=TLFsee7DDSI&t=322s
-
-
-## The command to install the CubeMX 
-
-```bash
-_JAVA_AWT_WM_NONREPARENTING=1 _JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true" GDK_BACKEND=x11 ~/STM32CubeMX/STM32CubeMX 
-# ~/STM32CubeMX/STM32CubeMX is the patht othe exectuable file
-```
 
  

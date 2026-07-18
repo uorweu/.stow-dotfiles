@@ -8,6 +8,6 @@ return {
     })
     -- Optionally configure and load the colorscheme
     -- directly inside the plugin declaration.
-    vim.cmd.colorscheme("zen")
+    -- vim.cmd.colorscheme("zen")
   end,
 }
