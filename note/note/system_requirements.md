@@ -123,6 +123,7 @@ sudo libinput debug-events --show-keycodes
 ----------------------------------------------------------------------------------
 
 # apt
+ripgrep (require for LazyVim)
 man-db manpages-dev manpages-posix-dev (for C developer - those package work with lazyvim so we can use shift k to open man inside of the text editor to view the function or the command) 
 xarchiver (extractor for compressed file)
 fzf
